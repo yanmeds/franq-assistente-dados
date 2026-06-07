@@ -1,0 +1,32 @@
+[
+  {
+    "id": "clientes_whatsapp_2024",
+    "question": "Quantos clientes interagiram com campanhas de WhatsApp em 2024?",
+    "reference_sql": "SELECT COUNT(DISTINCT cliente_id) AS clientes FROM campanhas_marketing WHERE canal='WhatsApp' AND interagiu=1 AND strftime('%Y',data_envio)='2024'"
+  },
+  {
+    "id": "reclamacoes_nao_resolvidas_por_canal",
+    "question": "Qual o número de reclamações não resolvidas por canal?",
+    "reference_sql": "SELECT canal, COUNT(*) AS total FROM suporte WHERE tipo_contato='Reclamação' AND resolvido=0 GROUP BY canal ORDER BY total DESC"
+  },
+  {
+    "id": "clientes_por_estado",
+    "question": "Quantos clientes existem em cada estado?",
+    "reference_sql": "SELECT estado, COUNT(*) AS total FROM clientes GROUP BY estado ORDER BY total DESC"
+  },
+  {
+    "id": "compras_por_canal",
+    "question": "Quantas compras foram feitas em cada canal?",
+    "reference_sql": "SELECT canal, COUNT(*) AS total FROM compras GROUP BY canal ORDER BY total DESC"
+  },
+  {
+    "id": "total_compras_2025",
+    "question": "Quantas compras foram feitas no ano de 2025?",
+    "reference_sql": "SELECT COUNT(*) AS total FROM compras WHERE strftime('%Y',data_compra)='2025'"
+  },
+  {
+    "id": "interacoes_campanha_por_canal",
+    "question": "Quantas interações com campanhas houve em cada canal?",
+    "reference_sql": "SELECT canal, COUNT(*) AS interacoes FROM campanhas_marketing WHERE interagiu=1 GROUP BY canal ORDER BY interacoes DESC"
+  }
+]
