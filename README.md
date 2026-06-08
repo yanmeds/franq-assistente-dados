@@ -116,7 +116,7 @@ data-assistant/
 
 ```bash
 # 0. Clone o repositório
-git clone https://github.com/SEU_USUARIO/franq-assistente-dados.git
+git clone https://github.com/yanmeds/franq-assistente-dados.git
 cd franq-assistente-dados
 
 # 1. Dependências (recomendado um ambiente virtual)
